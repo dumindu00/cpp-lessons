@@ -5,6 +5,7 @@
 # Compiled executable
 *.exe
 *.out
+.vscode
 
 # MacOS files
 .DS_Store
