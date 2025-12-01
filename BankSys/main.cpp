@@ -39,3 +39,56 @@ class BankAccount {
 
     };
 };
+
+int main() {
+    string name;
+    int accNo;
+    double balance;
+
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Enter account number: ";
+    cin  >> accNo;
+    cout << "Enter Deposit Amount: ";
+    cin >> balance;
+
+
+    BankAccount user(name, accNo, balance);
+
+    int choice;
+    while(true) {
+        cout << "\n===== BANK MENU =====\n";
+        cout << "1. Deposit Money\n";
+        cout << "2. Withdraw Money\n";
+        cout << "3. Check Balance\n";
+        cout << "4. Exit\n";
+        cout << "Choose option: ";
+        cin >> choice;
+
+        if(choice == 1) {
+            double amt;
+            cout << "Enter amount: ";
+            cin >> amt;
+            user.deposit(amt);
+        }
+        if(choice == 2) {
+            double amt;
+            cout << "Enter amount: ";
+            cin >> amt;
+            user.withdraw(amt);
+        }
+        else if(choice == 3) {
+            user.showDetails();
+        }
+        else if(choice == 4){
+            cout << "Thank you for using our bank system!\n";
+            break;
+        }
+        else {
+            cout << "Invalid option. try again!\n";
+        }
+
+    }
+
+    return 0;
+}
